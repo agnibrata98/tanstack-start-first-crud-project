@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Todo {
+  id        Int      @id @default(autoincrement())
+  title     String
+  createdAt DateTime @default(now())
+}
+
+model User {
+  id    Int    @id @default(autoincrement())
+  name  String
+  email String @unique
+  phone String
+  age   Int
+}
+
+
+model Author {
+  id    String  @id @default(uuid())
+  name  String
+  age   Int
+
+  books Book[]
+}
+
+
+model Book {
+  id          String @id @default(uuid())
+  title       String
+  genre       String
+  description String
+
+  authorId String
+  author   Author @relation(fields: [authorId], references: [id])
+}

@@ -380,6 +380,7 @@ export type BookCreateOrConnectWithoutAuthorInput = {
 
 export type BookCreateManyAuthorInputEnvelope = {
   data: Prisma.BookCreateManyAuthorInput | Prisma.BookCreateManyAuthorInput[]
+  skipDuplicates?: boolean
 }
 
 export type BookUpsertWithWhereUniqueWithoutAuthorInput = {
@@ -1154,6 +1155,7 @@ export type BookCreateManyArgs<ExtArgs extends runtime.Types.Extensions.Internal
    * The data used to create many Books.
    */
   data: Prisma.BookCreateManyInput | Prisma.BookCreateManyInput[]
+  skipDuplicates?: boolean
 }
 
 /**
@@ -1172,6 +1174,7 @@ export type BookCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions
    * The data used to create many Books.
    */
   data: Prisma.BookCreateManyInput | Prisma.BookCreateManyInput[]
+  skipDuplicates?: boolean
   /**
    * Choose, which related nodes to fetch as well
    */
